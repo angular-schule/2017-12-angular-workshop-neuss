@@ -31,14 +31,6 @@ Folgende Tools erleichtern die Arbeit, der Workshop kann aber auch ohne durchgef
 
 ## Pakete installieren
 
-Alle Windows-User sollten vor Beginn des Kurses die `windows-build-tools` installieren. Warnungen von NPM können ignoriert werden.  
-Nach der Installation musst Du eine neue Konsole starten!
-
-```
-npm install -g windows-build-tools
---> NUR FÜR WINDOWS!
-```
-
 Die Angular CLI ist das offizielle Build-Tool für Angular. Mit folgendem Befehl kannst Du die CLI installieren:
 
 ```
