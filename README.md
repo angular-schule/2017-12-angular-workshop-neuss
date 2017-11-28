@@ -5,11 +5,11 @@
 <hr>
 
 **Schön, dass Du dabei bist!**  
-Merke dir schon einmal dieses Repository.
+Merke dir schon einmal dieses Repository.  
 Hier wird während des Workshops stets der Quelltext unserer Beispielanwendung verfügbar sein.
 > **https://github.com/angular-schule/2017-12-angular-workshop-neuss**
 
-Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.
+Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.  
 Die gesamte Installation wird rund 30 Minuten dauern. 
 
 
@@ -29,12 +29,21 @@ Folgende Tools erleichtern die Arbeit, der Workshop kann aber auch ohne durchgef
 3. Git (und ggf. ein Client wie GitExtensions: [https://gitextensions.github.io](https://gitextensions.github.io))
 
 
+
+## Proxy?
+
+Sofern in deinem Unternehmen der Internetzugang durch einen Proxy realisiert wird, müssen wir noch einige Einstellungen setzen.
+Wir haben dir hierfür folgende Anleitung erstellt:
+https://presentations.angular.schule/PROXY.html
+
+
+
 ## Pakete installieren
 
 Die Angular CLI ist das offizielle Build-Tool für Angular. Mit folgendem Befehl kannst Du die CLI installieren:
 
 ```
-npm install -g @angular/cli@1.5.0
+npm install -g @angular/cli@1.5.4
 ```
 
 Überprüfe bitte anschließend die Versionen, damit wir beim Workshop alle auf dem gleichen Stand sind.
@@ -46,11 +55,12 @@ npm -v
 > Erwartet: 5.x oder höher
 
 ng -v
-> Erwartet: 1.5.0
+> Erwartet: 1.5.4
 
 ```
 
 (Hinweis: Wir haben die Versionsnummer für die Angular CLI explizit angegeben, damit wir zum Workshop alle die gleiche Umgebung haben. Sollte bis zum Workshop eine neue Version erschienen sein, können wir die Angular-CLI vor Ort aktualisieren.)
+
 
 
 ## Startprojekt erzeugen
@@ -77,11 +87,20 @@ Wenn bei allen Teilnehmern das Grundgerüst steht, können wir ohne Zeitverlust 
 ![Screenshot CLI](http://assets.angular.schule/chrome_cli_welcome.png)
 
 
-## Proxy?
 
-Sofern in deinem Unternehmen der Internetzugang durch einen Proxy realisiert wird, müssen wir noch einige Einstellung setzen.
-Wir haben dir hierfür folgende Anleitung erstellt:
-https://presentations.angular.schule/PROXY.html
+## Test-Umgebung prüfen
+
+Beende den laufenden Webserver mit der Tastenkombination `Strg + C`.  
+Prüfe bitte zum Abschluss, ob folgende Befehle ohne Fehlermeldungen ausführen:
+
+```
+ng test
+ng e2e
+```
+
+Sollte es zu einer Fehlermeldung kommen, dann sende uns den Fehlertext einfach per Mail an [team@angular.schule](mailto:team@angular.schule).  
+Wir werden schnell eine Lösung finden.
+
 
 
 ### Wir freuen uns schon! 🙂
@@ -93,6 +112,6 @@ Bei Fragen wende dich einfach direkt an das Angular-Schule-Team:
 
 <img src="http://assets.angular.schule/logo-angular-schule.png" height="60">
 
-### &copy; 2017 https://angular.schule, Stand: 06.11.2017
+### &copy; 2017 https://angular.schule, Stand: 28.11.2017
 
 
