@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'br';
+  title = 'Book Rating';
+
+  constructor() {
+    console.log('Hallo');
+  }
+
 }
