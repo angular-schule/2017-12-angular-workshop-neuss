@@ -9,5 +9,9 @@
       </h2>
     </div>
     <p>{{ book.description }}</p>
+
+    <!-- so bitte später nicht: -->
+    <button (click)="book.rating = book.rating - 1">-</button>
+    <button (click)="book.rating = book.rating + 1">+</button>
   </div>
 </div>
