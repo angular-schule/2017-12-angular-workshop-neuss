@@ -23,13 +23,9 @@ describe('BookComponent', () => {
 
     let rateUpWasCalled = false;
     component.book = {
-      isbn: '',
-      title: '',
-      description: '',
       rating: 0,
       rateUp: () => rateUpWasCalled = true,
-      rateDown: () => { }
-    };
+    } as any;
 
     fixture.detectChanges();
 
