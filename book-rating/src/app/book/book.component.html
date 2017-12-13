@@ -10,8 +10,12 @@
     </div>
     <p>{{ book.description }}</p>
 
-    <!-- so bitte später nicht: -->
-    <button (click)="book.rating = book.rating - 1">-</button>
-    <button (click)="book.rating = book.rating + 1">+</button>
+    <button [disabled]="book.rating === 1"
+            class="btn btn-secondary"
+            (click)="rateDown()">-</button>
+
+    <button [disabled]="book.rating === 5"
+            class="btn btn-danger"
+            (click)="rateUp()">+</button>
   </div>
 </div>
