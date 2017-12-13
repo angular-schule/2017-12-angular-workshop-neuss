@@ -17,20 +17,23 @@ describe('BookComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BookComponent);
     component = fixture.componentInstance;
+  });
+
+  it('should forward rateUp calls to book.rateUp', () => {
+
+    let rateUpWasCalled = false;
     component.book = {
       isbn: '',
       title: '',
       description: '',
       rating: 0,
-      rateUp: () => { },
+      rateUp: () => rateUpWasCalled = true,
       rateDown: () => { }
     };
 
-
     fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    component.rateUp();
+    expect(rateUpWasCalled).toBe(true);
   });
 });
