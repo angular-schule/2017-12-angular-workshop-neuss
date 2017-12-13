@@ -1,11 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Book } from '../shared/book';
 
 @Component({
   selector: 'br-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BookComponent implements OnInit {
 
