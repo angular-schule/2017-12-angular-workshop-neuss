@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
+import { TestPipe } from './shared/test.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    BookComponent
+    BookComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,
