@@ -1,3 +1,4 @@
+import { BookStoreService } from './../shared/book-store.service';
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 
@@ -10,13 +11,10 @@ export class DashboardComponent implements OnInit {
 
   books: Book[];
 
-  constructor() { }
+  constructor(private service: BookStoreService) { }
 
   ngOnInit() {
-    this.books = [
-      new Book('000', 'Angular', 'tolles Buch'),
-      new Book('111', 'AngularJS', 'oldy but goldy', 5)
-    ];
+    this.books = this.service.getAllStatic();
     this.reorderBooks();
   }
 
@@ -28,5 +26,4 @@ export class DashboardComponent implements OnInit {
   addBook(book: Book) {
     this.books.push(book);
   }
-
 }
