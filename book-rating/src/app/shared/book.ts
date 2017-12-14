@@ -3,12 +3,13 @@ export class Book {
     public isbn: string,
     public title: string,
     public description: string,
-    public rating = 1
+    public rating: number,
+    public published: Date
   ) {
   }
 
   static empty(): Book {
-    return new Book('', '', '');
+    return new Book('', '', '', 1, new Date());
   }
 
   rateUp() {

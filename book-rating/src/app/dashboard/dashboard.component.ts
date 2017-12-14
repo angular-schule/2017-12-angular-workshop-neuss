@@ -9,13 +9,16 @@ import { Book } from '../shared/book';
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
+  books: Book[] = [];
 
   constructor(private service: BookStoreService) { }
 
   ngOnInit() {
-    this.books = this.service.getAllStatic();
-    this.reorderBooks();
+    this.service.getAll()
+      .subscribe(books => {
+        this.books = books;
+        this.reorderBooks();
+      }, error => console.log('TODO: fehlerbehandlung', error));
   }
 
   reorderBooks(book?: Book) {
