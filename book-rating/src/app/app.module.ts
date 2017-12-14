@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { TestPipe } from './shared/test.pipe';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 
 @NgModule({
@@ -14,11 +16,13 @@ import { TestPipe } from './shared/test.pipe';
     AppComponent,
     DashboardComponent,
     BookComponent,
-    TestPipe
+    TestPipe,
+    CreateBookComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

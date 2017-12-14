@@ -7,6 +7,10 @@ export class Book {
   ) {
   }
 
+  static empty(): Book {
+    return new Book('', '', '');
+  }
+
   rateUp() {
     if (this.rating < 5) {
       this.rating++;
