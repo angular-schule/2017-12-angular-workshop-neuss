@@ -1,3 +1,4 @@
+import { ResizeService } from './shared/resize.service';
 import { Component } from '@angular/core';
 
 import { ErrorDisplayService } from './shared/error-display.service';
@@ -10,7 +11,9 @@ import { ErrorDisplayService } from './shared/error-display.service';
 export class AppComponent {
   title = 'Book Rating';
 
-  constructor(public eds: ErrorDisplayService) {
+  constructor(
+    public eds: ErrorDisplayService,
+    public rs: ResizeService) {
     console.log('Hallo');
   }
 }

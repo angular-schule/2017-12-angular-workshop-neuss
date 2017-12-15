@@ -21,7 +21,7 @@ export class BookStoreService {
 
   getAll() {
     return this.http
-      .get<Book[]>('https://api.angular.schule/booksSSSSS')
+      .get<Book[]>('https://api.angular.schule/books')
       .pipe(
         retry(3),
         rxMap(rawBook => rawBook

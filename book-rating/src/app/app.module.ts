@@ -1,3 +1,4 @@
+import { ResizeService } from './shared/resize.service';
 import { ErrorDisplayService } from './shared/error-display.service';
 import { ErrorInterceptor } from './shared/error-interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -36,7 +37,8 @@ import { BookStoreService } from './shared/book-store.service';
       useClass: ErrorInterceptor,
       multi: true
     },
-    ErrorDisplayService
+    ErrorDisplayService,
+    ResizeService
   ],
   bootstrap: [AppComponent]
 })
