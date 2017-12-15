@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { ErrorDisplayService } from './shared/error-display.service';
+
 @Component({
   selector: 'br-root',
   templateUrl: './app.component.html',
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Book Rating';
 
-  constructor() {
+  constructor(public eds: ErrorDisplayService) {
     console.log('Hallo');
   }
 }

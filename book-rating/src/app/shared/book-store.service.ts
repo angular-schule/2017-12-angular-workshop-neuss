@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { map as rxMap, retry, catchError } from 'rxjs/operators';
 import 'rxjs/add/observable/empty';
 
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map as rxMap, retry } from 'rxjs/operators';
 
 import { Book } from './book';
+
 
 @Injectable()
 export class BookStoreService {
@@ -33,7 +33,6 @@ export class BookStoreService {
             new Date(b.published) // we have to map from string to Date()
           )
         )
-      ),
-      catchError(() => Observable.empty()));
+      ));
   }
 }

@@ -1,4 +1,6 @@
-import { HttpClientModule } from '@angular/common/http';
+import { ErrorDisplayService } from './shared/error-display.service';
+import { ErrorInterceptor } from './shared/error-interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,7 +29,15 @@ import { BookStoreService } from './shared/book-store.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [BookStoreService],
+  providers: [
+    BookStoreService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    },
+    ErrorDisplayService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
