@@ -17,14 +17,5 @@ export class AppComponent {
     public rs: ResizeService,
     public auth: AuthService
   ) {
-
-    auth.handleAuthentication();
-
-    setTimeout(() => {
-      if (!auth.isAuthenticated) {
-        // auth.authorize();
-      }
-    }, 1);
-
   }
 }

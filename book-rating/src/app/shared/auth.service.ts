@@ -1,14 +1,22 @@
+import { Observable } from 'rxjs/Observable';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+
 
 @Injectable()
 export class AuthService {
 
+  private waitForToken = new ReplaySubject<string>(1);
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    this.handleAuthentication();
+  }
 
   private settings = {
       authServer: 'https://angular-schule.eu.auth0.com',
@@ -43,11 +51,18 @@ export class AuthService {
     this.router.navigate(['/']);
   }
 
-  getToken(): string {
-    return sessionStorage.getItem('access_token');
+  getToken$(): Observable<string> {
+    const token = sessionStorage.getItem('access_token');
+    if (token) {
+      this.waitForToken.next(token);
+    } else {
+      this.authorize();
+    }
+    return this.waitForToken;
   }
 
   get isAuthenticated() {
-    return !!this.getToken();
+    const token = sessionStorage.getItem('access_token');
+    return !!token;
   }
 }
