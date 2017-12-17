@@ -14,6 +14,7 @@ import { BookComponent } from './book/book.component';
 import { TestPipe } from './shared/test.pipe';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { BookStoreService } from './shared/book-store.service';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { BookStoreService } from './shared/book-store.service';
     BookComponent,
     TestPipe,
     CreateBookComponent
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
