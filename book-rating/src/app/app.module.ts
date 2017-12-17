@@ -1,3 +1,5 @@
+import { TokenInterceptor } from './shared/token.interceptor';
+import { AuthService } from './shared/auth.service';
 import { ResizeService } from './shared/resize.service';
 import { ErrorDisplayService } from './shared/error-display.service';
 import { ErrorInterceptor } from './shared/error-interceptor';
@@ -23,7 +25,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     DashboardComponent,
     BookComponent,
     TestPipe,
-    CreateBookComponent
+    CreateBookComponent,
     BookDetailsComponent
   ],
   imports: [
@@ -39,8 +41,14 @@ import { BookDetailsComponent } from './book-details/book-details.component';
       useClass: ErrorInterceptor,
       multi: true
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
     ErrorDisplayService,
-    ResizeService
+    ResizeService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

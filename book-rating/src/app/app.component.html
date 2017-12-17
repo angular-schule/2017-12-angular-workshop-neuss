@@ -24,9 +24,8 @@
     {{ title | test }}
   </h1>
 
-  <br-dashboard></br-dashboard>
+  <button (click)="auth.authorize()">Login!</button>
 
-  <!-- Hä? router-outlet, was ist das??! -->
   <router-outlet></router-outlet>
 
 </div>

@@ -21,7 +21,7 @@ export class BookStoreService {
 
   getAll() {
     return this.http
-      .get<Book[]>('https://api.angular.schule/books')
+      .get<Book[]>('https://api.angular.schule/secure/books')
       .pipe(
         retry(3),
         rxMap(rawBook => rawBook
@@ -33,6 +33,7 @@ export class BookStoreService {
             new Date(b.published) // we have to map from string to Date()
           )
         )
-      ));
+      ),
+    );
   }
 }

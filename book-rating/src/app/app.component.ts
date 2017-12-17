@@ -1,3 +1,4 @@
+import { AuthService } from './shared/auth.service';
 import { ResizeService } from './shared/resize.service';
 import { Component } from '@angular/core';
 
@@ -13,7 +14,17 @@ export class AppComponent {
 
   constructor(
     public eds: ErrorDisplayService,
-    public rs: ResizeService) {
-    console.log('Hallo');
+    public rs: ResizeService,
+    public auth: AuthService
+  ) {
+
+    auth.handleAuthentication();
+
+    setTimeout(() => {
+      if (!auth.isAuthenticated) {
+        // auth.authorize();
+      }
+    }, 1);
+
   }
 }
